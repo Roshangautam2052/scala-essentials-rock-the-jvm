@@ -7,4 +7,6 @@ object ValuesVariablesTypes extends App {
 
   // VALS ARE IMMUTABLE
   // COMPILER HAVE INFERRED TYPES
+
+  
 }
