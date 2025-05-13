@@ -1,0 +1,11 @@
+[0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /Users/roshan.gautam/Desktop/Developer-Journey/scala-essentials-rock-the-jvm/scala-essentials-rock-the-jvm/project/target/.sbt-compilation-infos/root-compile/.sbt-idea-lock ...[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m-- Warning: /Users/roshan.gautam/Desktop/Developer-Journey/scala-essentials-rock-the-jvm/scala-essentials-rock-the-jvm/src/main/scala/lectures/part2OOP/Exceptions.scala:42:4 [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m42 |[0m    [33mval[0m [36mexception[0m = [33mnew[0m [35mMyExceptions[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m   |[0m    ^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m   |[0m    Line is indented too far to the right, or a `{` or `:` is missing[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m-- Warning: /Users/roshan.gautam/Desktop/Developer-Journey/scala-essentials-rock-the-jvm/scala-essentials-rock-the-jvm/src/main/scala/lectures/part2OOP/InheritanceAndTraits.scala:9:3 [0m[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m9 |[0m   [33mdef[0m [36meat[0m = println([31m"nomomom"[0m)[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m[33m  |[0m   ^[0m[0m
+[0m[[0m[33mwarn[0m] [0m[0m[33m  |[0m   Line is indented too far to the left, or a `}` is missing[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /Users/roshan.gautam/Desktop/Developer-Journey/scala-essentials-rock-the-jvm/scala-essentials-rock-the-jvm/project/target/.sbt-compilation-infos/root-compile/.sbt-idea-lock.[0m
