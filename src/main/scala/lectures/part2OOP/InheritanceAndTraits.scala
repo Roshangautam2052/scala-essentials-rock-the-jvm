@@ -6,7 +6,7 @@ object InheritanceAndTraits extends App {
   class Animal {
     val creatureType:String = "Domestic"
     // Scala offers single class inheritance
-   def eat = println("nomomom")
+    def eat = println("nomomom")
   }
 
   class Cat extends Animal {

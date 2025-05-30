@@ -38,8 +38,7 @@ object Exceptions extends App {
     // How to define our own exceptions 
     
   class MyExceptions extends Exception
-    
-    val exception = new MyExceptions
+  val exception = new MyExceptions
   
 
   /**

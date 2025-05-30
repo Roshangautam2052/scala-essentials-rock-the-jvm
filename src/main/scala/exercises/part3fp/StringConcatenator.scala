@@ -9,5 +9,13 @@ object StringConcatenator extends App {
   }
 
   println(stringConcatenation("Roshan ", "Garima"))
+  
+  // Anonymous function way of creating stringConcatenation 
+  
+   val stringConcatenation2:(String, String) => String = _ + _
+  
+  val stringConcatenation6: (String,String) => String = (a:String, b:String) => a + b
+  
+  val adder: (Int, Int) => Int = (a:Int, b:Int) => a + b
 
 }

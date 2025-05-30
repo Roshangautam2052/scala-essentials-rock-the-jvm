@@ -18,8 +18,8 @@ abstract class MyList[+A] {
   def isEmpty: Boolean
 
   def add[B >: A](element: B): MyList[B]
-  
-  // higher order functions: receives a function as parameter or return another function as result 
+
+  // higher order functions: receives a function as parameter or return another function as result
   def map[B](myTransformer: A => B): MyList[B]
 
   def filter(myPredicate: A => Boolean): MyList[A]
@@ -95,7 +95,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
     = new Cons(2, new Cons(4, new Cons(6, Empty))))
    */
   override def map[B](myTransformer: A => B): MyList[B] =
-    new Cons(myTransformer(h), t.map(myTransformer))
+     Cons(myTransformer(h), t.map(myTransformer))
 
   /*
    [1,2,3].filter (n % 2 == 0) =
@@ -106,7 +106,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
    */
 
   override def filter(myPredicate: A => Boolean): MyList[A] =
-    if (myPredicate(h)) new Cons(h, t.filter(myPredicate))
+    if (myPredicate(h))  Cons(h, t.filter(myPredicate))
     else t.filter(myPredicate)
 
   /*
@@ -115,7 +115,7 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
    = new Cons(1, new Cons(2, Empty ++ [3,4,5]))
     = new Cons(1, new Cons(2, new Cons(2, new Cons(4, new Cons(5))))
    */
-  override def ++[B >: A](list: MyList[B]): MyList[B] = new Cons(h, t ++ list)
+  override def ++[B >: A](list: MyList[B]): MyList[B] =  Cons(h, t ++ list)
 
   /*
     [1,2].flatMap(n => [n, n +1]
@@ -131,13 +131,13 @@ case class Cons[+A](h: A, t: MyList[A]) extends MyList[A] {
 
 object ListTest extends App {
 
-  val listOfIntegers: MyList[Int] = new Cons(1, new Cons[Int](2, new Cons[Int](3, Empty)))
+  val listOfIntegers: MyList[Int] =  Cons(1, new Cons[Int](2, new Cons[Int](3, Empty)))
   
-  val cloneListOfIntegers: MyList[Int] = new Cons(1, new Cons[Int](2, new Cons[Int](3, Empty)))
+  val cloneListOfIntegers: MyList[Int] =  Cons(1, new Cons[Int](2, new Cons[Int](3, Empty)))
 
-  val anotherListOfIntegers: MyList[Int] = new Cons(4, new Cons[Int](5,  Empty))
+  val anotherListOfIntegers: MyList[Int] = Cons(4, new Cons[Int](5,  Empty))
 
-  val listOfStrings: MyList[String] = new Cons("Hello", new Cons("World", new Cons("Nepal", Empty)))
+  val listOfStrings: MyList[String] = Cons("Hello", Cons("World",  Cons("Nepal", Empty)))
 
   println(listOfStrings.toString)
   println(listOfIntegers.toString)
@@ -158,6 +158,16 @@ object ListTest extends App {
   println(listOfIntegers.flatMap(new Function1[Int, MyList[Int]] {
     override def apply(elem: Int): MyList[Int] = new Cons(elem, new Cons(elem +1, Empty))
   })).toString
+
+  // more functional way of calling the above methods
+
+  println(listOfIntegers.map(elem => elem * 2)).toString
+  // also can be written
+  println(listOfIntegers.map(_ * 2)).toString
+  println(listOfIntegers.filter(elem => elem % 2 == 0)).toString
+  // Also can be written
+  println(listOfIntegers.filter(_ % 2 == 0)).toString
+  println(listOfIntegers.flatMap(elem => Cons(elem +1, Empty))).toString
 
 
 }
